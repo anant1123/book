@@ -1,14 +1,12 @@
 from flask import Flask,render_template,request
-import pickle
+import andas as pd
 import numpy as np
 
-popular_df = pickle.load(open('popular.pkl','rb'))
-pt = pickle.load(open('pt.pkl','rb'))
-books = pickle.load(open('books.pkl','rb'))
-similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
-
-app = Flask(__name__,template_folder='templates')
-
+pt = pd.read_pickle('pt1.pkl')
+books = pd.read_pickle('books.pkl')
+similarity_score = pd.read_pickle('similarity_score.pkl')
+popular1 = pd.read_pickle('popular1.pkl')
+final = pd.read_pickle('final_ratings.pkl')
 @app.route('/')
 def index():
     return render_template('index.html',
