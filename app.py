@@ -115,3 +115,9 @@ if selected == "Recommend":
 
     if col1.button('recommend'):
         recommend(selected_book)
+
+def app():
+    st.title("Book-Recommendation")
+
+if __name__ == "__main__":
+    app()
