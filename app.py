@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-import andas as pd
+import pandas as pd
 import numpy as np
 
 pt = pd.read_pickle('pt1.pkl')
