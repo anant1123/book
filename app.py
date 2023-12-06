@@ -92,7 +92,7 @@ def show_popular():
                 search(item[0])
 
 
-def app():
+def app(*args, **kwargs):
     st.title("My Streamlit App")
     with st.sidebar:
         selected = option_menu(
