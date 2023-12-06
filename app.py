@@ -96,8 +96,8 @@ def app(*args, **kwargs):
     st.title("My Streamlit App")
 
     # Check for favicon.ico request and handle it
-    if st.request_path() == '/favicon.ico':
-        return
+   if st.request and st.request.path == '/favicon.ico':
+    return
 
     with st.sidebar:
         selected = option_menu(
