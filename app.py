@@ -7,8 +7,8 @@ import pywhatkit as pwt
 pt = pd.read_pickle('pt1.pkl')
 books = pd.read_pickle('books.pkl')
 similarity_score = pd.read_pickle('similarity_score.pkl')
-popular1 = pickle.load(open('popular1.pkl', 'rb'))
-final = pickle.load(open('final_ratings.pkl', 'rb'))
+popular1 = pd.read_pickle(open('popular1.pkl', 'rb'))
+final = pd.read_pickle(open('final_ratings.pkl', 'rb'))
 
 pt1=pd.DataFrame(pt)
 final_ratings=pd.DataFrame(final)
