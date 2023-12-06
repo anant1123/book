@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -69,7 +68,6 @@ def show_popular():
         avg = popular1.iloc[i]['avg-rating']
         data.append((title, author, url, avg))
 
-
     num_items = len(data)
     num_cols = 3
     col_width = 200
@@ -94,30 +92,29 @@ def show_popular():
                 search(item[0])
 
 
-
-with st.sidebar:
-    selected = option_menu(
-        menu_title="Main Menu",
-        options=["Home", "Recommend"],
-        icons=["house", "book"],
-        menu_icon="cast",
-        default_index=0
-    )
-
-if selected == "Home":
-    show_popular()
-
-if selected == "Recommend":
-    st.title("Book Recommender System")
-    book_titles = pt1.index.tolist()
-    selected_book = st.selectbox(f"Select Book Name", book_titles)
-    col1, col2 = st.columns(2)
-
-    if col1.button('recommend'):
-        recommend(selected_book)
-
 def app():
-    st.title("Book-Recommendation")
+    st.title("My Streamlit App")
+    with st.sidebar:
+        selected = option_menu(
+            menu_title="Main Menu",
+            options=["Home", "Recommend"],
+            icons=["house", "book"],
+            menu_icon="cast",
+            default_index=0
+        )
+
+    if selected == "Home":
+        show_popular()
+
+    if selected == "Recommend":
+        st.title("Book Recommender System")
+        book_titles = pt1.index.tolist()
+        selected_book = st.selectbox(f"Select Book Name", book_titles)
+        col1, col2 = st.columns(2)
+
+        if col1.button('recommend'):
+            recommend(selected_book)
+
 
 if __name__ == "__main__":
     app()
