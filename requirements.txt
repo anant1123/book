@@ -1,7 +1,8 @@
 numpy
 pandas
-scikit_learn
+scikit-learn
 streamlit
 streamlit_option_menu
 pickle
 pywhatkit
+gunicorn
